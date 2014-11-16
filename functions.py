@@ -1,4 +1,27 @@
-def beta_binomial(n,k,a,b,mp=False):
+def beta_binomial(k,n,a,b,mp=False):
+	"""
+	Beta binomial function, returning the probability of k successes in n trials (given a p distribution beta of barameters a and b), and supporting multiprecission output.
+	Parameters
+	----------
+	k : int, ndarray
+		Successes.
+	n : int, ndarray
+		Trials.
+	a, b : int,ndarray
+		Parameters of the beta distribution.
+	mp : bool, optional
+		Whether or not to use multiprecision floating-point output (default: False).
+	Returns
+	-------
+	val : int,
+		Probability of k successes in n trials.
+	Examples
+	--------
+	>>> n = 80000
+	>>> k = 40000
+	>>> mp_comb(n, k)
+	7.0802212521852e+24079
+	"""
 	if mp:
 		import mpmath
 		p = mp_comb(n,k) * mpmath.beta(k+a, n-k+b) / mpmath.beta(a,b)
@@ -10,8 +33,7 @@ def beta_binomial(n,k,a,b,mp=False):
 
 def mp_comb(N,k):
 	"""
-	The number of combinations of N things taken k at a time, with
-	multiprecision floating-point output.
+	The number of combinations of N things taken k at a time, with multiprecision floating-point output.
 	This is often expressed as "N choose k".
 	Parameters
 	----------
@@ -22,8 +44,7 @@ def mp_comb(N,k):
 	Returns
 	-------
 	val : int,
-		The total number of combinations, with floating-point
-		multiprecision.
+		The total number of combinations, with floating-point multiprecision.
 	Notes
 	-----
 	- Array arguments accepted only for exact=False case.
