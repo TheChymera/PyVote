@@ -57,5 +57,6 @@ def mp_comb(N,k):
 	7.0802212521852e+24079
 	"""
 	import mpmath
-	vals = mpmath.factorial(N)/(mpmath.factorial(k)*mpmath.factorial(N-k))
-	return vals
+	val = mpmath.factorial(N)/(mpmath.factorial(k)*mpmath.factorial(N-k))
+	return val
+	
