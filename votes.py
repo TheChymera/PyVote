@@ -36,8 +36,12 @@ def one_vote(N, threshold=0.5, ab=False, forecasts=False, ms=False, p=False, dia
 	if diagnostic:
 		import matplotlib.pyplot as plt
 		x = np.linspace(0,1,1000)
-		plt.plot(x, beta.pdf(x,a,b), linewidth=2)
-		plt.xlabel('Voter Share of Reference Candidate')
+		try:
+			plt.style.use('http://chymera.eu/matplotlib/styles/chymeric.mplstyle')
+		except ValueError:
+			plt.style.use('ggplot')
+		plt.plot(x, beta.pdf(x,a,b))
+		plt.xlabel('Reference Candidate Vote Share')
 		plt.ylabel('PDF')
 		plt.show()
 
