@@ -59,4 +59,28 @@ def mp_comb(N,k):
 	import mpmath
 	val = mpmath.factorial(N)/(mpmath.factorial(k)*mpmath.factorial(N-k))
 	return val
-	
+
+
+def fit_beta_to_ms(m,s):
+	"""
+	Calculate the a, b parameters of a beta function using the mean and variance (according to http://stats.stackexchange.com/a/12239/32504).
+	Parameters
+	----------
+	m : int, ndarray
+		Distribution mean.
+	s : int, ndarray
+		Distribution standard deviation.
+	Returns
+	-------
+	val : int, tuple
+		A and b parameters for the equivalent beta distribution.
+	Examples
+	--------
+	>>> n = 80000
+	>>> k = 40000
+	>>> mp_comb(n, k)
+	7.0802212521852e+24079
+	"""
+	a = ((1-m) / s**2 - 1 / m) * m**2
+	b = a(1/m - 1)
+	return a,b
