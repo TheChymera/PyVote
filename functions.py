@@ -82,5 +82,5 @@ def fit_beta_to_ms(m,s):
 	7.0802212521852e+24079
 	"""
 	a = ((1-m) / s**2 - 1 / m) * m**2
-	b = a(1/m - 1)
+	b = a*(1/m - 1)
 	return a,b
