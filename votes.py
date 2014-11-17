@@ -40,6 +40,8 @@ def one_vote(N, threshold=0.5, ab=False, forecasts=False, ms=False, p=False, dia
 			plt.style.use('http://chymera.eu/matplotlib/styles/chymeric.mplstyle')
 		except ValueError:
 			plt.style.use('ggplot')
+		plt.axvline(x=threshold, color="#fbb4b9", linewidth=1)
+		plt.legend(['percentage\n threshold'], loc='upper right')
 		plt.plot(x, beta.pdf(x,a,b))
 		plt.xlabel('Reference Candidate Vote Share')
 		plt.ylabel('PDF')
