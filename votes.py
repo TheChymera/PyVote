@@ -37,7 +37,7 @@ def one_vote(N, threshold=0.5, ab=False, forecasts=False, ms=False, p=False, dia
 		import matplotlib.pyplot as plt
 		x = np.linspace(0,1,1000)
 		try:
-			plt.style.use('http://chymera.eu/matplotlib/styles/chymeric.mplstyle')
+			plt.style.use('http://chymera.eu/matplotlib/styles/chymeric-gnome.mplstyle')
 		except ValueError:
 			plt.style.use('ggplot')
 		plt.axvline(x=threshold, color="#fbb4b9", linewidth=1)
