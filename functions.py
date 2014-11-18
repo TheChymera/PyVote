@@ -61,7 +61,7 @@ def mp_comb(N,k):
 	return val
 
 
-def fit_beta_to_ms(m,s):
+def fit_beta_to_normal(m,s):
 	"""
 	Calculate the a, b parameters of a beta function using the mean and variance (according to http://stats.stackexchange.com/a/12239/32504).
 	Parameters
