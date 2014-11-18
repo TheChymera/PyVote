@@ -3,8 +3,7 @@ __author__ = 'Horea Christian'
 
 def one_vote(N, threshold=0.5, ab=False, forecasts=False, normal=False, p=False, diagnostic=False):
 	import numpy as np
-
-	if [ab, forecasts, normal, p].count(True) != 1:
+	if sum(map(bool,[ab, forecasts, normal, p])) != 1:
 		raise ValueError("Please specify one and only one of the 'ab', 'forecasts', 'normal', or 'p' options.")
 
 	if ab:
