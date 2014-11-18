@@ -1,11 +1,11 @@
 from __future__ import division
 __author__ = 'Horea Christian'
 
-def one_vote(N, threshold=0.5, ab=False, forecasts=False, ms=False, p=False, diagnostic=False):
+def one_vote(N, threshold=0.5, ab=False, forecasts=False, normal=False, p=False, diagnostic=False):
 	import numpy as np
 	a = b = False
 	pr = False
-	if not (ab or forecasts or ms or p):
+	if not (ab or forecasts or normal or p):
 		raise ValueError("You need to specify either 'ab', 'forecasts', 'ms', or 'p'.")
 	if ab:
 		a, b = ab
@@ -14,12 +14,12 @@ def one_vote(N, threshold=0.5, ab=False, forecasts=False, ms=False, p=False, dia
 		if a:
 			raise ValueError("Please specify only one of the 'ab', 'forecasts', 'ms', and 'p' arguments.")
 		a, b, _, _ = beta.fit(forecasts, floc=0, fscale=1)
-	elif ms:
+	elif normal:
 		if a:
 			raise ValueError("Please specify only one of the 'ab', 'forecasts', 'ms', and 'p' arguments.")
-		from functions import fit_beta_to_ms
-		m, s = ms
-		a, b = fit_beta_to_ms(m,s)
+		from functions import fit_beta_to_normal
+		m, s = normal
+		a, b = fit_beta_to_normal(m,s)
 	elif p:
 		if a:
 			raise ValueError("Please specify only one of the 'ab', 'forecasts', 'ms', and 'p' arguments.")
