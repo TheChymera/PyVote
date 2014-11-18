@@ -13,6 +13,9 @@ parser.add_argument("-p", "--probability", help="Fixed forecast (not recommended
 parser.add_argument("-d", "--diagnostics", help="Display beta function plot for diagnostic purposes", action="store_true")
 args = parser.parse_args()
 
+if [args.beta, args.forecasts, args.normal, args.probability].count(True) != 1:
+	print "Please specify one, and only one of the '--beta'/'-b', '--forecasts'/'-f', '--normal'/'-n', and '--probability'/'-p' options."
+
 print args.population
 print args.threshold
 print args.beta
@@ -21,4 +24,4 @@ print args.normal
 print args.probability
 print args.diagnostics
 
-# votes.one_vote(args.population, args.threshold, ab=args.iptc_profile, do_minis=args.do_minis, do_fullsize=args.do_fullsize, template_name=args.template, mini_width=args.mini_width)
+votes.one_vote(args.population, args.threshold, ab=args.beta, forecasts=args.forecasts, ms=args.do_fullsize, template_name=args.template, mini_width=args.mini_width)
