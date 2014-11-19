@@ -32,7 +32,7 @@ Run the script either as `1vote_cli` (if installed globally), or as `./1vote_cli
 
 Example:
 ```
-1vote_cli 10000000 -f 0.519 0.55 0.492 0.53 0.515
+1vote_cli -f 0.519 0.55 0.492 0.53 0.515 10000000 -v
 ```
 
 ##Arguments
