@@ -25,9 +25,8 @@ emerge pyvote
 ##Usage
 Run the script either as `1vote_cli` (if installed globally), or as `./1vote_cli.py` from the containing folder:
 ```
-1vote_cli.py [-h] [-t THRESHOLD] [-b BETA BETA]
-			[-f FORECASTS [FORECASTS ...]] [-n NORMAL NORMAL]
-			[-p PROBABILITY] [-d] [-v]
+1vote_cli.py [-h] [-t THRESHOLD] [-b BETA BETA] [-f FORECASTS]
+			[-n NORMAL NORMAL] [-p PROBABILITY] [-d] [-v]
 			population
 ```
 
@@ -48,8 +47,8 @@ optional arguments:
                         Threshold needed for reference candidate to win
   -b BETA BETA, --beta BETA BETA
                         Beta distribution parameters: alpha and beta.
-  -f FORECASTS [FORECASTS ...], --forecasts FORECASTS [FORECASTS ...]
-                        List with polling forecasts.
+  -f FORECASTS, --forecasts FORECASTS
+                        Polling forecast (repeat flag for multiple forecasts).
   -n NORMAL NORMAL, --normal NORMAL NORMAL
                         Normal distribution fitted to forecast data: mean and
                         standard deviation
