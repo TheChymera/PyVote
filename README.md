@@ -7,7 +7,7 @@ Predictions are based on either a series of forecasts, a beta (or normal) probab
 
 ####On [Gentoo Linux](http://en.wikipedia.org/wiki/Gentoo_linux) and [Derivatives](http://en.wikipedia.org/wiki/Category:Gentoo_Linux_derivatives):
 
-PyVote is available in the [Portage](http://en.wikipedia.org/wiki/Portage_(software)) *[chymerc overlay](https://github.com/TheChymera/chymeric)* as **[app-misc/pyvote](https://github.com/TheChymera/chymeric/tree/master/app-misc/RTbatch)**.
+PyVote is available in the [Portage](http://en.wikipedia.org/wiki/Portage_(software)) *[chymerc overlay](https://github.com/TheChymera/chymeric)* as **[app-misc/pyvote](https://github.com/TheChymera/chymeric/tree/master/app-misc/pyvote)**.
 Just run the following command:
 
 ```
@@ -25,14 +25,14 @@ emerge pyvote
 ##Usage
 Run the script either as `1vote_cli` (if installed globally), or as `./1vote_cli.py` from the containing folder:
 ```
-1vote_cli.py [-h] [-t THRESHOLD] [-b BETA BETA] [-f FORECASTS]
-			[-n NORMAL NORMAL] [-p PROBABILITY] [-d] [-v]
-			population
+1vote_cli [-h] [-t THRESHOLD] [-b BETA BETA] [-f FORECASTS]
+		[-n NORMAL NORMAL] [-p PROBABILITY] [-d] [-v]
+		population
 ```
 
 Example:
 ```
-RTbatch_cli 10000000 -f 0.519 0.55 0.492 0.53 0.515
+1vote_cli 10000000 -f 0.519 0.55 0.492 0.53 0.515
 ```
 
 ##Arguments
