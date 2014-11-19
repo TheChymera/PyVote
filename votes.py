@@ -57,5 +57,5 @@ def one_vote(N, threshold=0.5, ab=False, forecasts=False, normal=False, p=False,
 		plt.ylabel('PDF')
 		plt.show()
 
-	pr = victory_pr+tie_pr
-	return pr
+	total_pr = victory_pr+tie_pr
+	return total_pr, victory_pr, tie_pr
