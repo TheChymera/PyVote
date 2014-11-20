@@ -66,13 +66,13 @@ def fit_beta_to_normal(m,s):
 	Calculate the a, b parameters of a beta function using the mean and variance (according to http://stats.stackexchange.com/a/12239/32504).
 	Parameters
 	----------
-	m : int, ndarray
+	m : float, ndarray
 		Distribution mean.
-	s : int, ndarray
+	s : float, ndarray
 		Distribution standard deviation.
 	Returns
 	-------
-	val : int, tuple
+	val : float, tuple
 		A and b parameters for the equivalent beta distribution.
 	Examples
 	--------
