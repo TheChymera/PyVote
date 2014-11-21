@@ -13,7 +13,7 @@ def beta_binomial(k,n,a,b,mp=False):
 		Whether or not to use multiprecision floating-point output (default: False).
 	Returns
 	-------
-	val : int,
+	p : int,ndarray
 		Probability of k successes in n trials.
 	Examples
 	--------
@@ -60,6 +60,32 @@ def mp_comb(N,k):
 	val = mpmath.factorial(N)/(mpmath.factorial(k)*mpmath.factorial(N-k))
 	return val
 
+def mp_binom(k,n,p):
+	"""
+	Binomial function, returning the probability of k successes in n trials given the trial success probability p, and supporting multiprecission output.
+	Parameters
+	----------
+	k : int, ndarray
+		Successes.
+	n : int, ndarray
+		Trials.
+	p : float,ndarray
+		Trial (experiment) success probability.
+	Returns
+	-------
+	val : float,ndarray
+		Probability of k successes in n trials.
+	Examples
+	--------
+	>>> n = 80000
+	>>> k = 40000
+	>>> p = 0.6
+	>>> mp_binom(n, k, p)
+	7.0802212521852e+24079
+	"""
+	import mpmath
+	pr = mp.comb(n,k)
+
 
 def fit_beta_to_normal(m,s):
 	"""
@@ -72,7 +98,7 @@ def fit_beta_to_normal(m,s):
 		Distribution standard deviation.
 	Returns
 	-------
-	val : float, tuple
+	a,b : float, tuple
 		A and b parameters for the equivalent beta distribution.
 	Examples
 	--------
