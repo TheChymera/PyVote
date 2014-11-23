@@ -85,7 +85,7 @@ def mp_binom(k,n,p):
 	"""
 	import mpmath
 	pr = mp.comb(n,k) * p**k * (1-p)**(n-k)
-
+	return pr
 
 def fit_beta_to_normal(m,s):
 	"""
