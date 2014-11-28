@@ -89,7 +89,7 @@ def mp_binom(k,n,p):
 
 def fit_beta_to_normal(m,s):
 	"""
-	Calculate the a, b parameters of a beta function using the mean and variance (according to http://stats.stackexchange.com/a/12239/32504).
+	Calculate the a, b parameters of a beta function using the mean and variance (formula according to http://stats.stackexchange.com/a/12239/32504).
 	Parameters
 	----------
 	m : float, ndarray
@@ -102,10 +102,10 @@ def fit_beta_to_normal(m,s):
 		A and b parameters for the equivalent beta distribution.
 	Examples
 	--------
-	>>> n = 80000
-	>>> k = 40000
-	>>> mp_comb(n, k)
-	7.0802212521852e+24079
+	>>> m = 0.4
+	>>> s = 0.2
+	>>> fit_beta_to_normal(m, s)
+	(1.9999999999999998, 2.9999999999999996)
 	"""
 	a = ((1-m) / s**2 - 1 / m) * m**2
 	b = a*(1/m - 1)
