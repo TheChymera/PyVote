@@ -77,11 +77,11 @@ def mp_binom(k,n,p):
 		Probability of k successes in n trials.
 	Examples
 	--------
-	>>> n = 80000
-	>>> k = 40000
-	>>> p = 0.6
-	>>> mp_binom(n, k, p)
-	7.0802212521852e+24079
+	>>> k = 10
+	>>> n = 10000
+	>>> p = 0.9
+	>>> mp_binom(k, n, p)
+	9.56548769092821e-9958
 	"""
 	import mpmath as mp
 	val = mp_comb(n,k) * mp.power(p,k) * mp.power(1-p,n-k)
