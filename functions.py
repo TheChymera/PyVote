@@ -1,4 +1,4 @@
-def beta_binomial(k,n,a,b,mp=False):
+def beta_binomial(k,n,a,b,multi_precission=False):
 	"""
 	Beta binomial function, returning the probability of k successes in n trials (given a p distribution beta of barameters a and b), and supporting multiprecission output.
 	Parameters
@@ -9,7 +9,7 @@ def beta_binomial(k,n,a,b,mp=False):
 		Trials.
 	a, b : int,ndarray
 		Parameters of the beta distribution.
-	mp : bool, optional
+	multi_precission : bool, optional
 		Whether or not to use multiprecision floating-point output (default: False).
 	Returns
 	-------
@@ -22,9 +22,9 @@ def beta_binomial(k,n,a,b,mp=False):
 	>>> mp_comb(n, k)
 	7.0802212521852e+24079
 	"""
-	if mp:
-		import mpmath
-		p = mp_comb(n,k) * mpmath.beta(k+a, n-k+b) / mpmath.beta(a,b)
+	if multi_precission:
+		import mpmath as mp
+		p = mp_comb(n,k) * mp.beta(k+a, n-k+b) / mp.beta(a,b)
 	else:
 		from scipy.special import beta
 		from scipy.misc import comb
@@ -56,8 +56,8 @@ def mp_comb(N,k):
 	>>> mp_comb(n, k)
 	7.0802212521852e+24079
 	"""
-	import mpmath
-	val = mpmath.factorial(N)/(mpmath.factorial(k)*mpmath.factorial(N-k))
+	import mpmath as mp
+	val = mp.factorial(N)/(mp.factorial(k)*mp.factorial(N-k))
 	return val
 
 def mp_binom(k,n,p):

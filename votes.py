@@ -31,13 +31,13 @@ def one_vote(N, threshold=0.5, ab=False, forecasts=False, normal=False, p=False,
 			tie_pr = 0
 	elif a and b:
 		from functions import beta_binomial
-		victory_pr = beta_binomial(np.ceil(N*threshold),N,a,b,mp=True)
+		victory_pr = beta_binomial(np.ceil(N*threshold),N,a,b,multi_precission=True)
 		if (N*threshold).is_integer():
 			# tie probability in case N*threshold is whole:
-			tie_pr = beta_binomial(N*(1-threshold)+1,N,a,b,mp=True)
+			tie_pr = beta_binomial(N*(1-threshold)+1,N,a,b,multi_precission=True)
 		elif not (N*threshold).is_integer() and threshold != 0.5:
 			# tie probability in case N*threshold is not whole:
-			tie_pr = beta_binomial(N*(1-threshold),N,a,b,mp=True)
+			tie_pr = beta_binomial(N*(1-threshold),N,a,b,multi_precission=True)
 		else:
 			tie_pr = 0
 	else:
