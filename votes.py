@@ -19,14 +19,14 @@ def one_vote(N, threshold=0.5, ab=False, forecasts=False, normal=False, p=False,
 		pass
 
 	if p:
-		from scipy.stats import binom
-		victory_pr = binom.pmf(np.ceil(N*threshold),N,p)
+		from functions import mp_binom
+		victory_pr = mp_binom(np.ceil(N*threshold),N,p)
 		if (N*threshold).is_integer():
 			# tie probability in case N*threshold is whole:
-			tie_pr = binom.pmf(N*(1-threshold)+1,N,p)
+			tie_pr = mp_binom(N*(1-threshold)+1,N,p)
 		elif not (N*threshold).is_integer() and threshold != 0.5:
 			# tie probability in case N*threshold is not whole:
-			tie_pr = binom.pmf(N*(1-threshold),N,p)
+			tie_pr = mp_binom(N*(1-threshold),N,p)
 		else:
 			tie_pr = 0
 	elif a and b:
