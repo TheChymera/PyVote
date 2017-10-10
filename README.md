@@ -1,11 +1,11 @@
-#PyVote
+# PyVote
 
 Python script with command line functionality that displays the probability of a 2-candidate popular election being decided by one vote.
 Predictions are based on either a series of forecasts, a beta (or normal) probability density function for outcomes, or a fixed outcome probability.
 
-##Installation
+## Installation
 
-####On [Gentoo Linux](http://en.wikipedia.org/wiki/Gentoo_linux) and [Derivatives](http://en.wikipedia.org/wiki/Category:Gentoo_Linux_derivatives):
+#### On [Gentoo Linux](http://en.wikipedia.org/wiki/Gentoo_linux) and [Derivatives](http://en.wikipedia.org/wiki/Category:Gentoo_Linux_derivatives):
 
 PyVote is available in the [Portage](http://en.wikipedia.org/wiki/Portage_(software)) *[chymerc overlay](https://github.com/TheChymera/chymeric)* as **[app-misc/pyvote](https://github.com/TheChymera/chymeric/tree/master/app-misc/pyvote)**.
 Just run the following command:
@@ -16,13 +16,13 @@ emerge pyvote
 
 *If you are not yet using this overlay, it can be enabled with just two commands, as seen in [the README](https://github.com/TheChymera/chymeric).*
 
-###Dependencies:
+### Dependencies:
 
-####Mandatory:
+#### Mandatory:
 * [**numpy**](http://en.wikipedia.org/wiki/NumPy) - in Portage as **dev-python/numpy**
 * [**mpmath**](http://mpmath.org/) - in Portage as **dev-python/mpmath**
 
-##Usage
+## Usage
 Run the script either as `1vote_cli` (if installed globally), or as `./1vote_cli.py` from the containing folder:
 ```
 1vote_cli [-h] [-t THRESHOLD] [-b BETA BETA] [-f FORECASTS]
@@ -35,7 +35,7 @@ Example:
 1vote_cli -f 0.519 0.55 0.492 0.53 0.515 10000000 -v
 ```
 
-##Arguments
+## Arguments
 
 ```
 positional arguments:
