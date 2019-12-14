@@ -5,7 +5,7 @@ import votes
 
 parser = argparse.ArgumentParser()
 parser.add_argument("population", help="The projected population turnout.", type=int)
-parser.add_argument("-t", "--threshold", help="Threshold needed for reference candidate to win", default=0.5, type=float)
+parser.add_argument("-t", "--threshold", help="Threshold needed for reference choice to win", default=0.5, type=float)
 parser.add_argument("-b", "--beta", help="Beta distribution parameters: alpha and beta.", nargs=2, type=float)
 parser.add_argument("-f", "--forecasts", help="Polling forecast (repeat flag for multiple forecasts).", type=float, nargs='+')
 parser.add_argument("-n", "--normal", help="Normal distribution fitted to forecast data: mean and standard deviation", nargs=2, type=float)
@@ -25,13 +25,13 @@ if args.forecasts:
 			forecast_str += " and " + str(i)
 		else:
 			forecast_str += " " + str(i) +","
-	forecast_str += " for the reference candidate"
+	forecast_str += " for the reference choice"
 elif args.beta:
-	forecast_str = "a forecast beta distribution for the reference candidate of parameters a="+str(args.beta[0])+", and b="+str(args.beta[1])
+	forecast_str = "a forecast beta distribution for the reference choice of parameters a="+str(args.beta[0])+", and b="+str(args.beta[1])
 elif args.normal:
-	forecast_str = "a forecast probability density function for the reference candidate with a mean of "+str(args.beta[0])+" and a standard deviation of "+str(args.beta[1])
+	forecast_str = "a forecast probability density function for the reference choice with a mean of "+str(args.beta[0])+" and a standard deviation of "+str(args.beta[1])
 elif args.probability:
-	forecast_str = "a fixed outcome probability for the reference candidate of "+str(args.probability)
+	forecast_str = "a fixed outcome probability for the reference choice of "+str(args.probability)
 if args.verbose:
 	print("The probability of a single vote deciding an election with "+str(args.population)+" voters and "+forecast_str+" is "+str(pr))
 else:
