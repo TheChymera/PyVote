@@ -120,4 +120,4 @@ def one(population,
 			forecast_str = "a fixed outcome probability for the preferred choice of {}".format(probability)
 		print('The probability of a single vote deciding an election with {} voters and {} is {}.'.format(population, forecast_str, change_pr))
 		if population & 1 == 0:
-			print('As the population is even, this probability is the sum of the probability of turning a tie into a victory ({}) or turning a loss into a tie ({}).'.format(victory_pr, tie_pr))
+			print('As the population is even, this probability is the sum of the probabilities of turning a tie into a victory ({}) and turning a loss into a tie ({}).'.format(victory_pr, tie_pr))
