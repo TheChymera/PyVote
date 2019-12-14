@@ -21,7 +21,7 @@ As the population is even, this probability is the sum of the probabilities of t
 Depending on your preferred package manager you may choose one of the following methods:
 
 #### Portage (e.g. on Gentoo Linux):
-iSAMRI is available via Portage (the package manager of Gentoo Linux, derivative distributions, and installable on [any other Linux distribution](https://wiki.gentoo.org/wiki/Project:Prefix), or BSD) via the [Chymeric Overlay](https://github.com/TheChymera/overlay).
+PyVote is available via Portage (the package manager of Gentoo Linux, derivative distributions, and installable on [any other Linux distribution](https://wiki.gentoo.org/wiki/Project:Prefix), or BSD) via the [Chymeric Overlay](https://github.com/TheChymera/overlay).
 Upon enabling the overlay, the package can be emerged:
 
 ````
@@ -38,7 +38,7 @@ cd pyvote/.gentoo
 
 #### Python Package Manager (Users):
 Python's `setuptools` allows you to install Python packages independently of your distribution (or operating system, even).
-This approach cannot manage any of our numerous non-Python dependencies (by design) and at the moment will not even manage Python dependencies;
+This approach is (by design) not particularly powerful in managing dependencies;
 as such, given any other alternative, **we do not recommend this approach**:
 
 ````
