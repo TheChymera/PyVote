@@ -71,30 +71,3 @@ For manual dependency management and overview you may use the following list:
 * [argh](https://github.com/neithere/argh)
 * [NumPy](http://www.numpy.org)
 * [mpmath](http://mpmath.org/)
-
-## Arguments
-
-```
-positional arguments:
-  population            The projected population turnout.
-
-optional arguments:
-  -h, --help            show this help message and exit
-  -t THRESHOLD, --threshold THRESHOLD
-                        Threshold needed for reference candidate to win
-  -b BETA BETA, --beta BETA BETA
-                        Beta distribution parameters: alpha and beta.
-  -f FORECASTS, --forecasts FORECASTS
-                        Polling forecast (repeat flag for multiple forecasts).
-  -n NORMAL NORMAL, --normal NORMAL NORMAL
-                        Normal distribution fitted to forecast data: mean and
-                        standard deviation
-  -p PROBABILITY, --probability PROBABILITY
-                        Fixed forecast (not recommended)
-  -d, --diagnostic      Display beta function plot for diagnostic purposes
-  -v, --verbose         Make output verbose
-```
-
----
-Released under the GPLv3 license.
-Project led by Horea Christian (address all correspondence to: h.chr@mail.ru)
