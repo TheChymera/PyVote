@@ -18,17 +18,25 @@
 .Trashes
 ehthumbs.db
 Thumbs.db
-*~
 
 # Python:
 *.pyc
 *.pyo
 
+# IPython
+Untitled*.ipynb
+
 # Data traces:
 output/*
-input/*
+results/*
+*/results/
+image-*.pdf
+image.pdf
+image.pmg
 image*.png
 *.backup/
+*.nii
+*.dcm
 
 #geany
 geany_run_script.sh
@@ -44,8 +52,8 @@ img*/
 #config files:
 *.cfg
 
+#gedit
+*~
+
 #git
 *.py.*
-
-#specific configs
-profiles/*
