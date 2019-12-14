@@ -1,6 +1,6 @@
 def beta_binomial(k,n,a,b,multi_precission=False):
 	"""
-	Beta binomial function, returning the probability of k successes in n trials (given a p distribution beta of barameters a and b), and supporting multiprecission output.
+	Beta binomial function, returning the probability of k successes in n trials (given a p distribution beta of parameters a and b), and supporting multiprecission output.
 	Parameters
 	----------
 	k : int, ndarray
