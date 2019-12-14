@@ -7,7 +7,7 @@ Predictions are based on either a series of forecasts, a beta (or normal) probab
 
 Input:
 ```
-user@host $ pyvote one 2000000 -f 0.519 0.55 0.492 0.53 0.515
+pyvote one 2000000 -f 0.519 0.55 0.492 0.53 0.515
 ```
 
 Output:
