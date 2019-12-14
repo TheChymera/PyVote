@@ -70,9 +70,9 @@ If you are getting a `Permission denied (publickey)` error upon trying to clone,
 
 ### Dependencies:
 
-The most precise specification of the dependency graph (including conditionality) can be extracted from the [pyvote ebuild](.gentoo/dev-python/pyvote/pyvote-99999.ebuild).
+The most precise specification of the dependency graph can be extracted from the [pyvote ebuild](.gentoo/dev-python/pyvote/pyvote-99999.ebuild).
 For manual dependency management and overview you may use the following list:
 
 * [argh](https://github.com/neithere/argh)
-* [NumPy](http://www.numpy.org)
 * [mpmath](http://mpmath.org/)
+* [NumPy](http://www.numpy.org)
