@@ -1,39 +1,76 @@
 # PyVote
 
-Python script with command line functionality that displays the probability of a 2-candidate popular election being decided by one vote.
+This package provides a Python module and a Bash interface which can compute the probability of a 2-choice popular election being decided by one vote.
 Predictions are based on either a series of forecasts, a beta (or normal) probability density function for outcomes, or a fixed outcome probability.
+
+## Examples
+
+```
+user@host $ pyvote one 2000000 -f 0.519 0.55 0.492 0.53 0.515
+The probability of a single vote deciding an election with 2000000 voters and forecasts of 0.519, 0.55, 0.492, 0.53, and 0.515 for the preferred choice is 1.12534199273483e-5.
+As the population is even, this probability is the sum of the probability of turning a tie into a victory (5.62662750202373e-6) or turning a loss into a tie (5.62679242532457e-6).
+```
 
 ## Installation
 
-#### On [Gentoo Linux](http://en.wikipedia.org/wiki/Gentoo_linux) and [Derivatives](http://en.wikipedia.org/wiki/Category:Gentoo_Linux_derivatives):
+Depending on your preferred package manager you may choose one of the following methods:
 
-PyVote is available in the [Portage](http://en.wikipedia.org/wiki/Portage_(software)) *[chymerc overlay](https://github.com/TheChymera/chymeric)* as **[app-misc/pyvote](https://github.com/TheChymera/chymeric/tree/master/app-misc/pyvote)**.
-Just run the following command:
+#### Portage (e.g. on Gentoo Linux):
+iSAMRI is available via Portage (the package manager of Gentoo Linux, derivative distributions, and installable on [any other Linux distribution](https://wiki.gentoo.org/wiki/Project:Prefix), or BSD) via the [Chymeric Overlay](https://github.com/TheChymera/overlay).
+Upon enabling the overlay, the package can be emerged:
 
-```
+````
 emerge pyvote
+````
+
+Alternatively, the live (i.e. latest) version of the package can be installed along with all of its dependencies without the need to enable to overlay:
+
+```
+git clone git@github.com:TheChymera/pyvote.git
+cd pyvote/.gentoo
+./install.sh
 ```
 
-*If you are not yet using this overlay, it can be enabled with just two commands, as seen in [the README](https://github.com/TheChymera/chymeric).*
+#### Python Package Manager (Users):
+Python's `setuptools` allows you to install Python packages independently of your distribution (or operating system, even).
+This approach cannot manage any of our numerous non-Python dependencies (by design) and at the moment will not even manage Python dependencies;
+as such, given any other alternative, **we do not recommend this approach**:
+
+````
+git clone git@github.com:TheChymera/pyvote.git
+cd pyvote
+python setup.py install --user
+````
+
+#### Python Package Manager (Developers):
+Python's `setuptools` allows you to install Python packages independently of your distribution (or operating system, even);
+it also allows you to install a "live" version of the package - dynamically linking back to the source code.
+This permits you to test code (with real module functionality) as you develop it.
+This method is sub-par for dependency management (see above notice), but - as a developer - you should be able to manually ensure that your package manager provides the needed packages.
+
+````
+git clone git@github.com:TheChymera/pyvote.git
+cd pyvote
+echo "export PATH=\$HOME/.local/bin/:\$PATH" >> ~/.bashrc
+source ~/.bashrc
+python setup.py develop --user
+````
+
+#### Troubleshooting Manual Installation
+If you are getting a `Permission denied (publickey)` error upon trying to clone, you can either:
+
+* [Add an SSH key](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/) to your GitHub account.
+* Pull via the HTTPS link `git clone https://github.com/IBT-FMI/SAMRI.git`.
+
 
 ### Dependencies:
 
-#### Mandatory:
-* [**numpy**](http://en.wikipedia.org/wiki/NumPy) - in Portage as **dev-python/numpy**
-* [**mpmath**](http://mpmath.org/) - in Portage as **dev-python/mpmath**
+The most precise specification of the dependency graph (including conditionality) can be extracted from the [pyvote ebuild](.gentoo/dev-python/pyvote/pyvote-99999.ebuild).
+For manual dependency management and overview you may use the following list:
 
-## Usage
-Run the script either as `1vote_cli` (if installed globally), or as `./1vote_cli.py` from the containing folder:
-```
-1vote_cli [-h] [-t THRESHOLD] [-b BETA BETA] [-f FORECASTS]
-		[-n NORMAL NORMAL] [-p PROBABILITY] [-d] [-v]
-		population
-```
-
-Example:
-```
-1vote_cli -f 0.519 0.55 0.492 0.53 0.515 10000000 -v
-```
+* [argh](https://github.com/neithere/argh)
+* [NumPy](http://www.numpy.org)
+* [mpmath](http://mpmath.org/)
 
 ## Arguments
 
