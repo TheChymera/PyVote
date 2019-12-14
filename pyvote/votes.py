@@ -1,7 +1,15 @@
-from __future__ import division
-__author__ = 'Horea Christian'
+import argh
 
-def one_vote(N, threshold=0.5, ab=False, forecasts=False, normal=False, p=False, diagnostic=False):
+@argh.arg('-f','--forecasts', nargs='*', type=str)
+def one_vote(N,
+	threshold=0.5,
+	ab=[],
+	forecasts=[],
+	normal=[],
+	p=False,
+	diagnostic=False,
+	):
+
 	import numpy as np
 	if sum(map(bool,[ab, forecasts, normal, p])) != 1:
 		raise ValueError("Please specify one and only one of the 'ab', 'forecasts', 'normal', or 'p' options.")
