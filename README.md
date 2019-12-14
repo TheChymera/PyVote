@@ -5,8 +5,13 @@ Predictions are based on either a series of forecasts, a beta (or normal) probab
 
 ## Examples
 
+Input:
 ```
 user@host $ pyvote one 2000000 -f 0.519 0.55 0.492 0.53 0.515
+```
+
+Output:
+```
 The probability of a single vote deciding an election with 2000000 voters and forecasts of 0.519, 0.55, 0.492, 0.53, and 0.515 for the preferred choice is 1.12534199273483e-5.
 As the population is even, this probability is the sum of the probability of turning a tie into a victory (5.62662750202373e-6) or turning a loss into a tie (5.62679242532457e-6).
 ```
