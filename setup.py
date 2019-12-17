@@ -1,11 +1,18 @@
 from setuptools import setup, find_packages
 
 packages = find_packages(exclude=('pyvote.tests*'))
+print(packages)
+print('AAAAAAAAAAAAAAAAAAAAAAAA')
+print(packages)
+print(packages)
+print('BBBBBBBBBBBBBBBBBBBBBBBB')
+print(packages)
+print(packages)
 
 setup(
 	name="pyvote",
 	version="9999",
-	description = "Python script suite to model vote impact probabilities. ",
+	description = "Python script suite to model vote impact probabilities.",
 	author = "Horea Christian",
 	author_email = "chr@chymera.eu",
 	url = "https://github.com/TheChymera/pyvote",
@@ -13,7 +20,7 @@ setup(
 	classifiers = [],
 	install_requires = [],
 	provides = ["pyvote"],
-	packages = packages,
+	packages = ['pyvote.*'],
 	include_package_data=True,
 	extras_require = {
 		},
