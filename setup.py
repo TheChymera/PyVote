@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-packages = find_packages(exclude=('samri.tests*', 'samri.*.tests*'))
+packages = find_packages(exclude=('pyvote.tests*'))
 
 setup(
 	name="pyvote",
