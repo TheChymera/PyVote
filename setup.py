@@ -1,13 +1,6 @@
 from setuptools import setup, find_packages
 
 packages = find_packages()
-print(packages)
-print('AAAAAAAAAAAAAAAAAAAAAAAA')
-print(packages)
-print(packages)
-print('BBBBBBBBBBBBBBBBBBBBBBBB')
-print(packages)
-print(packages)
 
 setup(
 	name="pyvote",
