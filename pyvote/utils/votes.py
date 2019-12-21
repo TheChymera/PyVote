@@ -111,7 +111,7 @@ def one(population,
 				forecast_str = ' and '.join(forecasts)
 			elif len(forecasts)==1:
 				forecast_str = str(forecast_str[0])
-			forecast_str = 'forecasts of {} for the preferred choice'.format(forecast_str)
+			forecast_str = 'forecasts of {} in favor of the preferred choice'.format(forecast_str)
 		elif beta:
 			forecast_str = 'a forecast beta distribution for the preferred choice with parameters a={}, and b={}'.format(*ab)
 		elif normal:
