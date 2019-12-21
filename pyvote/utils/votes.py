@@ -53,14 +53,14 @@ def one(population,
 		from scipy.stats import beta
 		a, b, _, _ = beta.fit(forecasts, floc=0, fscale=1)
 	elif normal:
-		from functions import fit_beta_to_normal
+		from pyvote.functions import fit_beta_to_normal
 		m, s = normal
 		a, b = fit_beta_to_normal(m,s)
 	else:
 		pass
 
 	if p:
-		from functions import mp_binom
+		from pyvote.functions import mp_binom
 		victory_pr = mp_binom(np.ceil(population*threshold),population,p)
 		if (population*threshold).is_integer():
 			# tie probability in case population*threshold is whole:
@@ -71,7 +71,7 @@ def one(population,
 		else:
 			tie_pr = 0
 	elif a and b:
-		from functions import beta_binomial
+		from pyvote.functions import beta_binomial
 		victory_pr = beta_binomial(np.ceil(population*threshold),population,a,b,multi_precission=True)
 		if (population*threshold).is_integer():
 			# tie probability in case population*threshold is whole:
