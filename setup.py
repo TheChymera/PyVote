@@ -20,7 +20,7 @@ setup(
 	classifiers = [],
 	install_requires = [],
 	provides = ["pyvote"],
-	packages = ['pyvote.*'],
+	packages = packages,
 	include_package_data=True,
 	extras_require = {
 		},
