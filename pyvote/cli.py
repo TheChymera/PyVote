@@ -1,7 +1,7 @@
 __author__ = "Horea Christian"
 
 import argh
-from votes import one
+from pyvote.utils.votes import one
 
 def main():
 	argh.dispatch_commands([one])
