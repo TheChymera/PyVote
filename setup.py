@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-packages = find_packages(exclude=('pyvote.tests*'))
+packages = find_packages()
 print(packages)
 print('AAAAAAAAAAAAAAAAAAAAAAAA')
 print(packages)
