@@ -11,7 +11,11 @@ setup(
 	url = "https://github.com/TheChymera/pyvote",
 	keywords = ["voting", "probabilities", "political economy", "election"],
 	classifiers = [],
-	install_requires = [],
+	install_requires = [
+		'argh',
+		'mpmath',
+		'numpy',
+		],
 	provides = ["pyvote"],
 	packages = packages,
 	include_package_data=True,
